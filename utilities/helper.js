@@ -17,7 +17,7 @@ export function validateOrder(data) {
         return {
 
             valid: false,
-            message: 'Custome Address is required'
+            message: 'Customer Address is required'
 
         }
     }
@@ -34,7 +34,7 @@ export function validateOrder(data) {
 }
 
 
-// order Id genenrator : formet => ORD-20260127-001-
+// order Id genenrator : formet => ORD-20260127-001
 export function orderIdGenerator(){
     const date = new Date();
     const year = date.getFullYear();
@@ -82,5 +82,5 @@ export function createOrderDocument(orderData , orderId , totals){
         estimatedTime: null,
         cratedAt: new Date(),
         updatedAt: new Date(),
-    }
+    };
 }
