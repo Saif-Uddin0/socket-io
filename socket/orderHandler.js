@@ -5,7 +5,13 @@ export const orderHandler =(io, socket)=>{
     socket.on("placeOrder", async(data , callback)=>{
         try{
             console.log(`place order from ${socket.id}`)
-            const validation = validateOrder(data)
+            const validation = validateOrder(data);
+            if(!validation.valid){
+                callback({
+                    success: false,
+                    message: validation.message
+                })
+            }
             
         }catch(error){
             console.log(error);

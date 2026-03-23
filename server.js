@@ -27,8 +27,6 @@ io.on("connection", (socket) => {
   orderHandler(io, socket);
 });
 
-
-
 // Middleware
 app.use(cors({ origin: process.env.CLIENT_URL || '*', credentials: true }));
 app.use(express.json());

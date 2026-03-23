@@ -11,7 +11,7 @@ let db = null;
  */
 export const connectDB = async () => {
   try {
-    // Create MongoDB client
+    // Create MongoDB client      
     client = new MongoClient(process.env.MONGODB_URI);
     
     // Connect to database
