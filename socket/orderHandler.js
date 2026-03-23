@@ -7,7 +7,7 @@ export const orderHandler =(io, socket)=>{
             console.log(`place order from ${socket.id}`)
             const validation = validateOrder(data);
             if(!validation.valid){
-                callback({
+                return callback({
                     success: false,
                     message: validation.message
                 })
