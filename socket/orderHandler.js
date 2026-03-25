@@ -85,8 +85,25 @@ export const orderHandler = (io, socket) => {
 
 
             io.to(`order-${data.orderId}`).emit('orderCancelled', { orderID: data.orderId });
+            io.to("admins").emit("orderCancelled", { orderId: data.orderId, customerName: order.customerName });
+
+            callback({ success: true });
 
         } catch (error) {
+            console.log("Cancel Order error", error)
+            callback({ success: false, message: error.message })
+        }
+    })
+
+
+
+    // get my orders
+    socket.on('getMyOrders', async (data, callback) => {
+        try {
+
+        } catch (error) {
+            console.log("Cannn't get the orders", error)
+            callback({ success: false, message: error.message })
 
         }
     })
